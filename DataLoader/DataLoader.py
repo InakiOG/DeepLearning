@@ -10,7 +10,7 @@ transform = transforms.Compose([
 ])
 
 # Load the STL10 dataset
-STL10_data = STL10(root='data', split='train',
+STL10_data = STL10(root='DataLoader/data', split='train',
                    download=True, transform=transform)
 
 # Create a DataLoader
@@ -20,7 +20,7 @@ data_loader = DataLoader(STL10_data, batch_size=32, shuffle=True)
 
 
 def show_batch(loader):
-    images, labels = data_iter.next(iter(loader))
+    images, labels = next(iter(loader))
     img = torchvision.utils.make_grid(images)
     plt.figure(figsize=(12, 12))
     plt.imshow(img.permute(1, 2, 0))
