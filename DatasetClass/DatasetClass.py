@@ -49,7 +49,7 @@ def show_batch(loader):
 
 
 # Create an instance of the custom dataset
-custom_data = CustomDataset(root_dir='./data',
+custom_data = CustomDataset(root_dir='./DatasetClass/data',
                             transform=transform)
 # Create a DataLoader
 data_loader = DataLoader(dataset=custom_data, batch_size=32,
